@@ -7,6 +7,15 @@
 	background-color: black;
 }
 
+.navbar-inverse {
+	background: none;
+	border: none;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+}
+
 
 
 

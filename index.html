@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
-                padding-top: 50px;
+                padding-top: 0px;
                 padding-bottom: 20px;
             }
         </style>
@@ -21,38 +21,75 @@
     </head>
     <body>
 
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">Colour Experiments</a>
+         </div>
+         <div class="navbar-collapse collapse">
+         </div><!--/.navbar-collapse -->
+       </div>
+     </nav>
+
     <div class="container-fluid">
 
       <div class="row">
-      <p>RGB Assertions:<p>
-        <ol>
-          <li>If r > b, then the colour should be considered warm.</li>
-          <li>If b > r, then the colour should be considered cool.</li>
-          <li>If they are all equal, then the color should be considered achromatic.</li>
-          <li>If the difference between b and r is less than 50, then the colour is mildly temperate.</li>
-          <li>If the difference between b and r is greater than 50, then the colour is strongly temperate.</li>
-        </ol>
+        <div class="experiment">
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+          <div class="colour-grid clear-fix"></div>
+        </div>
       </div>
 
       <div class="row">
-<!--         <p>Examples of Intensly Warm Colours</p> -->
+        <div class="col-xs-offset-2 col-xs-8">
+          <h1>Defining Warm and Cool Colours</h1>
+          <p>RGB Hypotheses:<p>
+          <ol>
+            <li>If r > b, then the colour should be considered warm.</li>
+            <li>If b > r, then the colour should be considered cool.</li>
+            <li>If they are all equal, then the color should be considered achromatic.</li>
+            <li>If the difference between b and r is less than 50, then the colour is mildly temperate.</li>
+            <li>If the difference between b and r is greater than 50, then the colour is strongly temperate.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Absolute Warm (r - b > 100)</h3>
         <div class="int-warm-grid colour-grid clear-fix">
         </div>
       </div>
-      <div class="row">
-<!--         <p>Examples of Mildly Warm Colours</p> -->
+<!--       <div class="row">
+        <h3>Warm (r - b < 100)</h3>
         <div class="mild-warm-grid colour-grid clear-fix">
         </div>
       </div>
       <div class="row">
-<!--         <p>Examples of Mildly Cool Colours</p> -->
+        <h3>Cool (b - r < 100)</h3>
         <div class="mild-cool-grid colour-grid clear-fix">
         </div>
-      </div>
+      </div> -->
       <div class="row">
-<!--         <p>Examples of Intense Cool Colours</p> -->
+        <h3>Absolute Cool (b - r > 100)</h3>
         <div class="int-cool-grid colour-grid clear-fix">
         </div>
+      </div>
+
+      <div class="row">
+        <h3>Relative Warm<h3>
+        <div class="colour-grid clear-fix"></div>
+        <div class="colour-grid clear-fix"></div>
       </div>
 
     </div> <!-- /container -->        
@@ -66,6 +103,8 @@
         <script src="js/vendor/d3.min.js"></script>
         <script src="js/vendor/tinyColor.js"></script>
 
+        <script src="js/classes/Rgb.js"></script>
+        <script src="js/classes/ColourGrid.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
