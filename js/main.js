@@ -31,12 +31,19 @@ var randomColour = function(temperature, intensity){
 			rgb = new Rgb();
 		}
 	}
-
-	console.log('red', rgb['r']);
-	console.log('blue', rgb['b']);
-	console.log("");
-
 	return tinycolor(rgb).toRgbString();
 }
 
-buildColourGrid();
+var conditionColour = function(condition){
+	var rgb = new Rgb();
+};
+
+new ColourGrid(".experiment .colour-grid").init();
+
+new ColourGrid(".orange-grid").init();
+new ColourGrid(".blue-grid").init();
+new ColourGrid(".int-warm-grid").init();
+new ColourGrid(".mild-warm-grid").init();
+new ColourGrid(".mild-cool-grid").init();
+new ColourGrid(".int-cool-grid").init();
+
