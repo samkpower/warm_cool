@@ -53,8 +53,8 @@
 
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
-          <h1>Defining Warm and Cool Colours</h1>
-          <p>RGB Hypotheses:<p>
+          <h1>Defining Warm and Cool Colours - Red vs. Blue</h1>
+          <p>Hypotheses:<p>
           <ol>
             <li>If r > b, then the colour should be considered warm.</li>
             <li>If b > r, then the colour should be considered cool.</li>
@@ -70,26 +70,42 @@
         <div class="int-warm-grid colour-grid clear-fix">
         </div>
       </div>
-<!--       <div class="row">
-        <h3>Warm (r - b < 100)</h3>
-        <div class="mild-warm-grid colour-grid clear-fix">
-        </div>
-      </div>
-      <div class="row">
-        <h3>Cool (b - r < 100)</h3>
-        <div class="mild-cool-grid colour-grid clear-fix">
-        </div>
-      </div> -->
+
       <div class="row">
         <h3>Absolute Cool (b - r > 100)</h3>
         <div class="int-cool-grid colour-grid clear-fix">
         </div>
       </div>
 
-      <div class="row">
+<!--       <div class="row">
         <h3>Relative Warm<h3>
         <div class="colour-grid clear-fix"></div>
         <div class="colour-grid clear-fix"></div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h1>Defining Warm and Cool Colours - Orange vs. Blue</h1>
+          <p>Hypotheses:<p>
+          <ol>
+            <li>Warmth Quotient = r/255 + g/127 + b/0</li>
+            <li>Coolness Quotient = r/0 + g/127 + b/255</li>
+            <li>If Warmth Quotient > Coolness Quotient, then the colour should be considered warm. Else, colour should be considered cool.</li>
+            <li>If equal, then the color should be considered achromatic.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Absolute Warm (wQ > cQ)</h3>
+        <div class="orange-grid colour-grid clear-fix">
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Absolute Cool (wQ < cQ)</h3>
+        <div class="blue-grid colour-grid clear-fix">
+        </div>
       </div>
 
     </div> <!-- /container -->        
@@ -99,6 +115,7 @@
       </div>
     </div>
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/vendor/underscore.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/d3.min.js"></script>
         <script src="js/vendor/tinyColor.js"></script>
