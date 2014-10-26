@@ -1,14 +1,3 @@
-var colourTemperature = function(colour){
-	var testColour = tinycolor(colour).toRgb();
-	if (testColour['r'] > testColour['b']) {
-		return 'warm';
-	} else if (testColour['r'] < testColour['b']) {
-		return 'cool';
-	} else if (testColour['r'] == testColour['b'] == textColour['g']) {
-		return 'achromatic';
-	}
-}
-
 var randomColour = function(temperature, intensity){
 	var temp = temperature || null;
 	var intensity = intensity || null;
@@ -34,12 +23,7 @@ var randomColour = function(temperature, intensity){
 	return tinycolor(rgb).toRgbString();
 }
 
-var conditionColour = function(condition){
-	var rgb = new Rgb();
-};
-
 new ColourGrid(".experiment .colour-grid").init();
-
 new ColourGrid(".orange-grid").init();
 new ColourGrid(".blue-grid").init();
 new ColourGrid(".int-warm-grid").init();
