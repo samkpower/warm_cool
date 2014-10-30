@@ -53,52 +53,145 @@
 
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
-          <h1>Defining Warm and Cool Colours - Red vs. Blue</h1>
+          <h1>Defining Absolute Warm and Cool Colours - Red vs. Blue</h1>
           <p>Hypotheses:<p>
           <ol>
             <li>If r > b, then the colour should be considered warm.</li>
             <li>If b > r, then the colour should be considered cool.</li>
             <li>If they are all equal, then the color should be considered achromatic.</li>
-            <li>If the difference between b and r is less than 50, then the colour is mildly temperate.</li>
-            <li>If the difference between b and r is greater than 50, then the colour is strongly temperate.</li>
           </ol>
         </div>
       </div>
 
       <div class="row">
-        <h3>Absolute Warm (r - b > 100)</h3>
-        <div class="int-warm-grid colour-grid clear-fix">
+        <h3>Absolute Warm (r - b > 0)</h3>
+        <div class="red-grid colour-grid clear-fix">
         </div>
       </div>
 
       <div class="row">
-        <h3>Absolute Cool (b - r > 100)</h3>
-        <div class="int-cool-grid colour-grid clear-fix">
+        <h3>Absolute Cool (b - r > 0)</h3>
+        <div class="blue-grid-1 colour-grid clear-fix">
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-offset-2 col-xs-8">
-          <h1>Defining Warm and Cool Colours - Orange vs. Blue</h1>
+          <h3>Results</h3>
+          <p>The absolute cool colours looked correct. Some colours presented as warm were questionable - for example some fuchsias, maroons, and neon greens appeared that, in my opinion, would be better classified as cool.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h1>Defining Absolute Warm and Cool Colours - Orange vs. Blue</h1>
           <p>Hypotheses:<p>
           <ol>
-            <li>Warmth Quotient = r/255 + g/127 + b/0</li>
-            <li>Coolness Quotient = r/0 + g/127 + b/255</li>
-            <li>If Warmth Quotient > Coolness Quotient, then the colour should be considered warm. Else, colour should be considered cool.</li>
+            <li>Warmth Score = r/255 + g/165 + b/0</li>
+            <li>Coolness Score = r/0 + g/0 + b/255</li>
+            <li>If Warmth Score > Coolness Score, then the colour should be considered warm. Else, colour should be considered cool.</li>
             <li>If equal, then the color should be considered achromatic.</li>
           </ol>
         </div>
       </div>
 
       <div class="row">
-        <h3>Absolute Warm (wQ > cQ)</h3>
+        <h3>Absolute Warm (wS > cS)</h3>
         <div class="orange-grid colour-grid clear-fix">
         </div>
       </div>
 
       <div class="row">
-        <h3>Absolute Cool (wQ < cQ)</h3>
-        <div class="blue-grid colour-grid clear-fix">
+        <h3>Absolute Cool (wS < cS)</h3>
+        <div class="blue-grid-2 colour-grid clear-fix">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h3>Results</h3>
+          <p>Much, much better. Happy moving forward with this as a working definition.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h1>Defining Relative Warm and Cool Colours - Orangeness vs. Blueness</h1>
+          <p>Hypotheses:<p>
+          <ol>
+            <li>All hues (red, yellow, blue, cyan, green, magenta, purple) have warm and cool variations.
+            <li>Warmth Score = r/255 + g/165 + b/0</li>
+            <li>Coolness Score = r/0 + g/0 + b/255</li>
+            <li>If Warmth Score > Coolness Score, then the colour should be considered warm. Else, colour should be considered cool.</li>
+            <li>If equal, then the color should be considered achromatic.</li>
+          </ol>
+          <p>Hues and HSL intervals</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Hue</td>
+                <td>Hue interval</td>
+                <td>RGB equivalent</td>
+                <td>Hue range</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Red</td>
+                <td>H: 0</td>
+                <td>r: 255</td>
+                <td>H: 330-29</td>
+              </tr>
+              <tr>
+                <td>Yellow</td>
+                <td>H: 60</td>
+                <td>r: 255, g: 255</td>
+                <td>H: 30-89</td>
+              </tr>
+              <tr>
+                <td>Green</td>
+                <td>H: 120</td>
+                <td>g: 255</td>
+                <td>H: 90-149</td>
+              </tr>
+              <tr>
+                <td>Cyan</td>
+                <td>H: 180</td>
+                <td>g: 255, b: 255</td>
+                <td>H: 150-209</td>
+              </tr>
+              <tr>
+                <td>Blue</td>
+                <td>H: 240</td>
+                <td>b: 255</td>
+                <td>H: 210-269</td>
+              </tr>
+              <tr>
+                <td>Fuchsia</td>
+                <td>H: 300</td>
+                <td>b: 255, r: 255</td>
+                <td>H: 270-329</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Relative Warm Blues (wS > cS)</h3>
+        <div class="warm-blue-grid colour-grid clear-fix">
+        </div>
+      </div>
+
+      <div class="row">
+        <h3>Relative Cool Blues (wS < cS)</h3>
+        <div class="cool-blue-grid colour-grid clear-fix">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h3>Results</h3>
         </div>
       </div>
 
@@ -113,6 +206,7 @@
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/d3.min.js"></script>
         <script src="js/vendor/tinyColor.js"></script>
+        <script src="js/warmCoolUtils.js"></script>
 
         <script src="js/classes/Rgb.js"></script>
         <script src="js/classes/ColourGrid.js"></script>

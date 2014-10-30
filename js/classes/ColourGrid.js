@@ -26,7 +26,16 @@ ColourGrid.prototype = {
 	},
 	addColour: function(){
 		this.colourChips.each(function(){
-			$(this).css("background-color", randomColour());
+			$(this).css("background-color", new tinycolor.random().toRgbString());
+		});
+	},
+	applyCustomRule: function(expression){
+		this.colourChips.each(function(){
+			var c = tinycolor.random();
+			while (expression(c) === false) {
+				c = tinycolor.random();
+			} 
+			$(this).css("background-color", c.toRgbString());
 		});
 	}
 }
