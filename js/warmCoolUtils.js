@@ -2,6 +2,12 @@ var WarmCoolUtils = {
 	getHue: function(){
 		return this.toHsl().h;
 	},
+	getHueAnchor: function(){
+		var h = this.getHue();
+		if ( h < 30 || h > 330 ) {
+			return new tinycolor("red");
+		}
+	},
 	calcDiff: function(rgbKey, rgbValue){
 		return Math.abs(this[rgbKey] - rgbValue);
 	},
@@ -13,6 +19,13 @@ var WarmCoolUtils = {
 		}
 		rgbDiff.total = rgbDiff.r + rgbDiff.b + rgbDiff.g;
 		return rgbDiff;
+	},
+	calcHueDiff: function (rgb) {
+		var hueDiff = this.getHue() - rgb.getHue();
+		if (hueDiff < 0) {
+			hueDiff = hueDiff * -1;
+		}
+		return hueDiff;
 	},
 	isWarm: function (){
 		var warmDiff = this.calcRgbDiff(warmDef).total;
