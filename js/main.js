@@ -106,23 +106,26 @@ var closerToOrangeHue = function (c) {
 	var warmRange = c.getHue() + 30;
 	var coolRange = c.getHue() - 30;
 
-	if ( warmRange > c.getHue() && c.getHue() > lower ) {
+	if ( warmRange > c.getHue() && c.getHue() > coolRange ) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-// var closerToBlueHue = function (c) {
-// 	var blueHue = new tinycolor("blue");
-// 	var orangeHue = new tinycolor("orange");
+var closerToBlueHue = function (c) {
+	var blueHue = new tinycolor("blue");
+	var orangeHue = new tinycolor("orange");
 
-// 	if ( c.calcHueDiff(orangeHue) > c.calcHueDiff(blueHue) ) {
-// 		return true;
-// 	} else {
-// 		return false;
-// 	}
-// }
+	var warmRange = c.getHue() + 30;
+	var coolRange = c.getHue() - 30;
+
+	if ( warmRange < c.getHue() && c.getHue() < coolRange ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
 new ColourGrid(".experiment .colour-grid").init();
@@ -160,7 +163,7 @@ new ColourGrid(".cool-yellow-grid").init().applyCustomRule(cool, yellow);
 // ------------
 
 new ColourGrid(".warm-blue-grid-2").init().applyCustomRule(closerToOrangeHue, blue);
-// new ColourGrid(".cool-blue-grid-2").init().applyCustomRule(closerToBlueHue, blue);
+new ColourGrid(".cool-blue-grid-2").init().applyCustomRule(closerToBlueHue, blue);
 
 // new ColourGrid(".warm-green-grid-2").init().applyCustomRule(closerToOrangeHue, green);
 // new ColourGrid(".cool-green-grid-2").init().applyCustomRule(closerToBlueHue, green);
