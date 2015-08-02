@@ -30,13 +30,15 @@ ColourGrid.prototype = {
 		});
 	},
 	applyCustomRule: function(expressionA, expressionB){
-		var ruleA = expressionA || function () { return true} ;
-		var ruleB = expressionB || function () { return true} ;
+		var ruleA = expressionA || function () { return true } ;
+		var ruleB = expressionB || function () { return true } ;
+		var retryCount = 0;
 
 		this.colourChips.each(function(){
 			var c = tinycolor.random();
-			while (ruleA(c) === false || ruleB(c) === false) {
+			while ((ruleA(c) === false || ruleB(c) === false) && retryCount < 500000) {
 				c = tinycolor.random();
+				retryCount ++;
 			} 
 			$(this).css("background-color", c.toRgbString());
 		});

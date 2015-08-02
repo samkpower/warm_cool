@@ -100,13 +100,8 @@ var cyan = function (c) {
 }
 
 var closerToOrangeHue = function (c) {
-	var blueHue = new tinycolor("blue");
-	var orangeHue = new tinycolor("orange");
-
-	var warmRange = c.getHue() + 30;
-	var coolRange = c.getHue() - 30;
-
-	if ( warmRange > c.getHue() && c.getHue() > coolRange ) {
+	var warmInterval = getHueInterval(c.getHueOriginName(), 'warm')
+	if (c.hueIsBetweenInterval(warmInterval)) {
 		return true;
 	} else {
 		return false;
@@ -114,13 +109,8 @@ var closerToOrangeHue = function (c) {
 }
 
 var closerToBlueHue = function (c) {
-	var blueHue = new tinycolor("blue");
-	var orangeHue = new tinycolor("orange");
-
-	var warmRange = c.getHue() + 30;
-	var coolRange = c.getHue() - 30;
-
-	if ( warmRange < c.getHue() && c.getHue() < coolRange ) {
+	var coolInterval = getHueInterval(c.getHueOriginName(), 'cool')
+	if (c.hueIsBetweenInterval(coolInterval)) {
 		return true;
 	} else {
 		return false;
@@ -165,17 +155,17 @@ new ColourGrid(".cool-yellow-grid").init().applyCustomRule(cool, yellow);
 new ColourGrid(".warm-blue-grid-2").init().applyCustomRule(closerToOrangeHue, blue);
 new ColourGrid(".cool-blue-grid-2").init().applyCustomRule(closerToBlueHue, blue);
 
-// new ColourGrid(".warm-green-grid-2").init().applyCustomRule(closerToOrangeHue, green);
-// new ColourGrid(".cool-green-grid-2").init().applyCustomRule(closerToBlueHue, green);
+new ColourGrid(".warm-green-grid-2").init().applyCustomRule(closerToOrangeHue, green);
+new ColourGrid(".cool-green-grid-2").init().applyCustomRule(closerToBlueHue, green);
 
-// new ColourGrid(".warm-red-grid-2").init().applyCustomRule(closerToOrangeHue, red);
-// new ColourGrid(".cool-red-grid-2").init().applyCustomRule(closerToBlueHue, red);
+new ColourGrid(".warm-red-grid-2").init().applyCustomRule(closerToOrangeHue, red);
+new ColourGrid(".cool-red-grid-2").init().applyCustomRule(closerToBlueHue, red);
 
-// new ColourGrid(".warm-cyan-grid-2").init().applyCustomRule(closerToOrangeHue, cyan);
-// new ColourGrid(".cool-cyan-grid-2").init().applyCustomRule(closerToBlueHue, cyan);
+new ColourGrid(".warm-cyan-grid-2").init().applyCustomRule(closerToOrangeHue, cyan);
+new ColourGrid(".cool-cyan-grid-2").init().applyCustomRule(closerToBlueHue, cyan);
 
-// new ColourGrid(".warm-fuchsia-grid-2").init().applyCustomRule(closerToOrangeHue, fuchsia);
+new ColourGrid(".warm-fuchsia-grid-2").init().applyCustomRule(closerToOrangeHue, fuchsia);
 // new ColourGrid(".cool-fuchsia-grid-2").init().applyCustomRule(closerToBlueHue, fuchsia);
 
-// new ColourGrid(".warm-yellow-grid-2").init().applyCustomRule(closerToOrangeHue, yellow);
-// new ColourGrid(".cool-yellow-grid-2").init().applyCustomRule(closerToBlueHue, yellow);
+new ColourGrid(".warm-yellow-grid-2").init().applyCustomRule(closerToOrangeHue, yellow);
+new ColourGrid(".cool-yellow-grid-2").init().applyCustomRule(closerToBlueHue, yellow);
