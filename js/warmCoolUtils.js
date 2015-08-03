@@ -13,7 +13,7 @@ var WarmCoolUtils = {
 		} else if ( 210 < h && h < 269 ) {
 			return new tinycolor("blue");
 		} else if ( 270 < h && h < 329 ) {
-			return new tinycolor("fuschia");
+			return new tinycolor("magenta");
 		} else {
 			return new tinycolor("red");
 		}
@@ -68,8 +68,20 @@ var WarmCoolUtils = {
 		}
 	},
 	isWarmish: function () {
+		var warmInterval = getHueInterval(this.getHueOriginName(), 'warm')
+		if (c.hueIsBetweenInterval(warmInterval)) {
+			return true;
+		} else {
+			return false;
+		}
 	},
 	isCoolish: function () {
+		var coolInterval = getHueInterval(this.getHueOriginName(), 'cool')
+		if (this.hueIsBetweenInterval(coolInterval)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 
@@ -118,21 +130,21 @@ var getHueInterval = function(hue, temperature) {
 		} else {
 			return [210, 269];
 		}
-	} else if (hue === 'fuchsia') {
+	} else if (hue === 'magenta') {
 		if (temperature === 'warm') {
-			return [270, 299];
-		} else if (temperature === 'cool') {
 			return [300, 329];
+		} else if (temperature === 'cool') {
+			return [270, 299];
 		} else {
 			return [270, 329];
 		}
 	} else if (hue === 'red') {
 		if (temperature === 'warm') {
-			return [0, 30];
+			return [0, 29];
 		} else if (temperature === 'cool') {
 			return [330, 360];
 		} else {
-			return [[0, 30], [330, 360]];
+			return [[0, 29], [330, 360]];
 		}
 	} else {
 		console.log('error, hue not valid:' + hue);

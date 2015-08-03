@@ -77,7 +77,7 @@ var yellow = function (c) {
 	}
 }
 
-var fuchsia = function (c) {
+var magenta = function (c) {
 	var upper = 300 + 30;
 	var lower = 300 - 30;
 
@@ -144,8 +144,8 @@ new ColourGrid(".cool-red-grid").init().applyCustomRule(cool, red);
 new ColourGrid(".warm-cyan-grid").init().applyCustomRule(warm, cyan);
 new ColourGrid(".cool-cyan-grid").init().applyCustomRule(cool, cyan);
 
-new ColourGrid(".warm-fuchsia-grid").init().applyCustomRule(warm, fuchsia);
-new ColourGrid(".cool-fuchsia-grid").init().applyCustomRule(cool, fuchsia);
+new ColourGrid(".warm-magenta-grid").init().applyCustomRule(warm, magenta);
+new ColourGrid(".cool-magenta-grid").init().applyCustomRule(cool, magenta);
 
 new ColourGrid(".warm-yellow-grid").init().applyCustomRule(warm, yellow);
 new ColourGrid(".cool-yellow-grid").init().applyCustomRule(cool, yellow);
@@ -164,8 +164,8 @@ new ColourGrid(".cool-red-grid-2").init().applyCustomRule(closerToBlueHue, red);
 new ColourGrid(".warm-cyan-grid-2").init().applyCustomRule(closerToOrangeHue, cyan);
 new ColourGrid(".cool-cyan-grid-2").init().applyCustomRule(closerToBlueHue, cyan);
 
-new ColourGrid(".warm-fuchsia-grid-2").init().applyCustomRule(closerToOrangeHue, fuchsia);
-// new ColourGrid(".cool-fuchsia-grid-2").init().applyCustomRule(closerToBlueHue, fuchsia);
+new ColourGrid(".warm-magenta-grid-2").init().applyCustomRule(closerToOrangeHue, magenta);
+new ColourGrid(".cool-magenta-grid-2").init().applyCustomRule(closerToBlueHue, magenta);
 
 new ColourGrid(".warm-yellow-grid-2").init().applyCustomRule(closerToOrangeHue, yellow);
 new ColourGrid(".cool-yellow-grid-2").init().applyCustomRule(closerToBlueHue, yellow);
