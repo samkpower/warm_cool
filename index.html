@@ -167,7 +167,7 @@
                 <td>H: 210-269</td>
               </tr>
               <tr>
-                <td>Magenta</td>
+                <td>Fuchsia</td>
                 <td>H: 300</td>
                 <td>b: 255, r: 255</td>
                 <td>H: 270-329</td>
@@ -261,11 +261,11 @@
           <h1>Defining Relative Warm and Cool Colours - Orangeness vs. Blueness</h1>
           <p>Hypotheses:<p>
           <ol>
-            <li>All hues (red, yellow, blue, cyan, green, magenta) have warm and cool variations.
-            <li></li>
-            <li></li>
-            <li>If Warmth Score > Coolness Score, then the colour should be considered warm. Else, colour should be considered cool.</li>
-            <li>If equal, then the color should be considered achromatic.</li>
+            <li>All hues (red, yellow, blue, cyan, green, magenta, purple) have warm and cool variations.
+            <li>Hue Origin of Blue = 240</li>
+            <li>Hue Origin of Orange = 38.82352941176471 </li>
+            <li>All hue groups have warm and cool intervals. One interval that is closer to the blue hue origin, and one closer to the orange hue origin.</li>
+            <li>If the hue falls within the warm interval of a hue, it should be considered relatively warm. Vice versa for when a hue falls witing a cool interval of a hue.</li>
           </ol>
           <p>Hues and HSL intervals</p>
           <table class="table">
@@ -275,6 +275,8 @@
                 <td>Hue Origin</td>
                 <td>RGB equivalent</td>
                 <td>Hue Interval</td>
+                <td>Warm Interval</td>
+                <td>Cool Interval</td>
               </tr>
             </thead>
             <tbody>
@@ -283,36 +285,48 @@
                 <td>H: 0</td>
                 <td>r: 255</td>
                 <td>H: 0-29 &amp; 330-360</td>
+                <td>H: 0-29</td>
+                <td>H: 330-360</td>
               </tr>
               <tr>
                 <td>Yellow</td>
                 <td>H: 60</td>
                 <td>r: 255, g: 255</td>
                 <td>H: 30-89</td>
+                <td>H: 30-60</td>
+                <td>H: 60-89</td>
               </tr>
               <tr>
                 <td>Green</td>
                 <td>H: 120</td>
                 <td>g: 255</td>
                 <td>H: 90-149</td>
+                <td>H: 90-120</td>
+                <td>H: 120-149</td>
               </tr>
               <tr>
                 <td>Cyan</td>
                 <td>H: 180</td>
                 <td>g: 255, b: 255</td>
                 <td>H: 150-209</td>
+                <td>H: 150-179</td>
+                <td>H: 180-209</td>
               </tr>
               <tr>
                 <td>Blue</td>
                 <td>H: 240</td>
                 <td>b: 255</td>
                 <td>H: 210-269</td>
+                <td>H: 210-229</td>
+                <td>H: 230-269</td>
               </tr>
               <tr>
                 <td>Magenta</td>
                 <td>H: 300</td>
                 <td>b: 255, r: 255</td>
                 <td>H: 270-329</td>
+                <td>H: 299-329</td>
+                <td>H: 270-300</td>
               </tr>
             </tbody>
           </table>
@@ -388,6 +402,13 @@
       <div class="row">
         <h3>Relative Cool Magentas</h3>
         <div class="cool-magenta-grid-2 colour-grid clear-fix">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <h3>Results</h3>
+          <p>This will work - there is variation in value, and I can see a clear difference between the warm and cool variations of each hue.</p>
         </div>
       </div>
 
