@@ -29,7 +29,7 @@ var WarmCoolUtils = {
 			'r': this.calcDiff('_r', rgb._r),
 			'g': this.calcDiff('_g', rgb._g),
 			'b': this.calcDiff('_b', rgb._b),
-		}
+		};
 		rgbDiff.total = rgbDiff.r + rgbDiff.b + rgbDiff.g;
 		return rgbDiff;
 	},
@@ -68,7 +68,7 @@ var WarmCoolUtils = {
 		}
 	},
 	isWarmish: function () {
-		var warmInterval = getHueInterval(this.getHueOriginName(), 'warm')
+		var warmInterval = getHueInterval(this.getHueOriginName(), 'warm');
 		if (c.hueIsBetweenInterval(warmInterval)) {
 			return true;
 		} else {
@@ -76,14 +76,14 @@ var WarmCoolUtils = {
 		}
 	},
 	isCoolish: function () {
-		var coolInterval = getHueInterval(this.getHueOriginName(), 'cool')
+		var coolInterval = getHueInterval(this.getHueOriginName(), 'cool');
 		if (this.hueIsBetweenInterval(coolInterval)) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-}
+};
 
 var warmDef = new tinycolor ({
 	'r': 255,
@@ -102,7 +102,7 @@ var getHueInterval = function(hue, temperature) {
 		if (temperature === 'warm') {
 			return [30, 60];
 		} else if (temperature === 'cool') {
-			return [61, 89]
+			return [61, 89];
 		} else {
 			return [30, 89];
 		}

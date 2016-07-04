@@ -1,5 +1,5 @@
 function ColourGrid (gridContainer, options){
-	this.$ = gridContainer
+	this.$ = gridContainer;
 	this.gridView = $(gridContainer);
 	this.colourChips = [];
 	this.rows = [];
@@ -30,8 +30,8 @@ ColourGrid.prototype = {
 		});
 	},
 	applyCustomRule: function(expressionA, expressionB){
-		var ruleA = expressionA || function () { return true } ;
-		var ruleB = expressionB || function () { return true } ;
+		var ruleA = expressionA || function () { return true; };
+		var ruleB = expressionB || function () { return true; };
 		var retryCount = 0;
 
 		this.colourChips.each(function(){
@@ -39,8 +39,8 @@ ColourGrid.prototype = {
 			while ((ruleA(c) === false || ruleB(c) === false) && retryCount < 500000) {
 				c = tinycolor.random();
 				retryCount ++;
-			} 
+			}
 			$(this).css("background-color", c.toRgbString());
 		});
 	}
-}
+};

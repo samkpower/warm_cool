@@ -4,7 +4,7 @@ var redGreaterThanBlue = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var blueGreaterThanRed = function (c) {
 	if (c._b > c._r) {
@@ -12,7 +12,7 @@ var blueGreaterThanRed = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var warm = function (c) {
 	var orange = new tinycolor("orange");
@@ -23,7 +23,7 @@ var warm = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var cool = function (c) {
 	var orange = new tinycolor("orange");
@@ -34,7 +34,7 @@ var cool = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var blue = function (c) {
 	var upper = 240 + 30;
@@ -45,7 +45,7 @@ var blue = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var green = function (c) {
 	var upper = 120 + 30;
@@ -56,7 +56,7 @@ var green = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var red = function (c) {
 	if ( 30 > c.getHue() || c.getHue() > 330 ) {
@@ -64,7 +64,7 @@ var red = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var yellow = function (c) {
 	var upper = 60 + 30;
@@ -75,7 +75,7 @@ var yellow = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var magenta = function (c) {
 	var upper = 300 + 30;
@@ -86,7 +86,7 @@ var magenta = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var cyan = function (c) {
 	var upper = 180 + 30;
@@ -97,25 +97,25 @@ var cyan = function (c) {
 	} else {
 		return false;
 	}
-}
+};
 
 var closerToOrangeHue = function (c) {
-	var warmInterval = getHueInterval(c.getHueOriginName(), 'warm')
+	var warmInterval = getHueInterval(c.getHueOriginName(), 'warm');
 	if (c.hueIsBetweenInterval(warmInterval)) {
 		return true;
 	} else {
 		return false;
 	}
-}
+};
 
 var closerToBlueHue = function (c) {
-	var coolInterval = getHueInterval(c.getHueOriginName(), 'cool')
+	var coolInterval = getHueInterval(c.getHueOriginName(), 'cool');
 	if (c.hueIsBetweenInterval(coolInterval)) {
 		return true;
 	} else {
 		return false;
 	}
-}
+};
 
 
 new ColourGrid(".experiment .colour-grid").init();
