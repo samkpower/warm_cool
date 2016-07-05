@@ -126,7 +126,7 @@ var hueIntervalMap = [
 		hue: 'magenta',
 		interval: [270, 329],
 		warmInterval: [300, 329],
-		coolInterval: [270, 299],
+		coolInterval: [270, 299]
 	},
 	{
 		hue: 'red',
@@ -142,10 +142,6 @@ var getHueInterval = function (hue, temperature) {
 	if (hueObject === undefined) {
 		var validHues = _.map(hueIntervalMap, function(hueInterval) { return hueInterval.hue; }).join(' ,');
 		throw 'Error. Invalid hue. Must be one of: ' + validHues;
-	}
-
-	if (temperature && (temperature !== 'warm' ||  temperature !== 'cool')) {
-		throw 'Error. Invalid temperature. Must be one of: warm, cool';
 	}
 
 	if (temperature) {
