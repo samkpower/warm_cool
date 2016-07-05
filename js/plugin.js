@@ -16,7 +16,7 @@ ColourTarget.prototype = {
 		self.initBehaviour();
 	},
 	checkTextOrBlock: function(){
-		var tag = this.$.prop('tagName')
+		var tag = this.$.prop('tagName');
 		if (tag === "P" || tag === "A" || tag === "SPAN" || tag === "LABEL" || tag.match("H") || tag === "LI") {
 			this.text = true;
 		} else {
@@ -76,7 +76,7 @@ ColourTarget.prototype = {
 		            	self.$.css('color', color.tiny.toString());
 		            }
 		        });
-			})
+			});
 		});
 
 		self.$.on('mouseleave', function(){
@@ -84,12 +84,12 @@ ColourTarget.prototype = {
 		});
 	},
 	setColours: function(){
-		var self = this
+		var self = this;
 		$.each(this.initColours, function(a,b){
 			self.$.css(a,b);
 		});
 	}
-}
+};
 
 $('body *').each(function(){
 	var obj = new ColourTarget(this).init();

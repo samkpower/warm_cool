@@ -97,58 +97,61 @@ var coolDef = new tinycolor ({
 	'b': 255
 });
 
-var getHueInterval = function(hue, temperature) {
-	if (hue === 'yellow') {
-		if (temperature === 'warm') {
-			return [30, 60];
-		} else if (temperature === 'cool') {
-			return [61, 89];
-		} else {
-			return [30, 89];
-		}
-	} else if (hue === 'green') {
-		if (temperature === 'warm') {
-			return [90, 120];
-		} else if (temperature === 'cool') {
-			return [121, 149];
-		} else {
-			return [90, 149];
-		}
-	} else if (hue === 'cyan') {
-		if (temperature === 'warm') {
-			return [150, 179];
-		} else if (temperature === 'cool') {
-			return [180, 209];
-		} else {
-			return [150, 209];
-		}
-	} else if (hue === 'blue') {
-		if (temperature === 'warm') {
-			return [210, 239];
-		} else if (temperature === 'cool') {
-			return [240, 269];
-		} else {
-			return [210, 269];
-		}
-	} else if (hue === 'magenta') {
-		if (temperature === 'warm') {
-			return [300, 329];
-		} else if (temperature === 'cool') {
-			return [270, 299];
-		} else {
-			return [270, 329];
-		}
-	} else if (hue === 'red') {
-		if (temperature === 'warm') {
-			return [0, 29];
-		} else if (temperature === 'cool') {
-			return [330, 360];
-		} else {
-			return [[0, 29], [330, 360]];
-		}
+var hueIntervalMap = [
+	{
+		hue: 'yellow',
+		interval: [30, 89],
+	  warmInterval: [30, 60],
+		coolInterval: [61, 89]
+	},
+	{
+		hue: 'green',
+		interval: [90, 149],
+		warmInterval: [90, 120],
+		coolInterval: [121, 149]
+	},
+	{
+		hue: 'cyan',
+		interval: [150, 209],
+		warmInterval: [150, 179],
+		coolInterval: [180, 209]
+	},
+	{
+		hue: 'blue',
+		interval: [210, 269],
+		warmInterval: [210, 239],
+		coolInterval: [240, 269]
+	},
+	{
+		hue: 'magenta',
+		interval: [270, 329],
+		warmInterval: [300, 329],
+		coolInterval: [270, 299],
+	},
+	{
+		hue: 'red',
+		interval: [[0, 29], [330, 360]],
+		warmInterval: [0, 29],
+		coolInterval: [330, 360]
+	}
+];
+
+var getHueInterval = function (hue, temperature) {
+	var hueObject = _.find(hueIntervalMap, function(hueInterval) { return hueInterval.hue === hue; });
+
+	if (hueObject === undefined) {
+		var validHues = _.map(hueIntervalMap, function(hueInterval) { return hueInterval.hue; }).join(' ,');
+		throw 'Error. Invalid hue. Must be one of: ' + validHues;
+	}
+
+	if (temperature && (temperature !== 'warm' ||  temperature !== 'cool')) {
+		throw 'Error. Invalid temperature. Must be one of: warm, cool';
+	}
+
+	if (temperature) {
+		return hueObject[temperature + 'Interval'];
 	} else {
-		console.log('error, hue not valid:' + hue);
-		return [0, 0];
+		return hueObject.interval;
 	}
 };
 
